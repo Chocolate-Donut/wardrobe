@@ -1,0 +1,5 @@
+fastapi==0.95.2
+uvicorn==0.22.0
+clarifai-grpc==9.9.0
+python-multipart==0.0.6
+pillow==10.0.0  # Для работы с изображениями (опционально)
