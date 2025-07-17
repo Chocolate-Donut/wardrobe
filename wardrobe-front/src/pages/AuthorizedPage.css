@@ -1,0 +1,84 @@
+
+
+
+.dropdown-modal {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  /* 🔥 Анимация лесенкой */
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: slideFadeIn 0.3s ease forwards;
+}
+
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 900;
+}
+.dropdown-modal button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdown-modal button.settings {
+  background-color: #ed5bc1ba;
+}
+
+.dropdown-modal button.settings:hover {
+  background-color: #e13fa1;
+  transform: scale(1.03);
+}
+
+
+.dropdown-modal button.logout {
+  background-color: #b24244ce;
+}
+
+.dropdown-modal button.logout:hover {
+  background-color: #d9363e;
+  transform: scale(1.03);
+}
+
+
+.dropdown-modal button:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dropdown-modal button:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInButton {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

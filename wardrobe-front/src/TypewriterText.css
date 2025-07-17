@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro');
+
+.cursor {
+  position: relative;
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.516);
+  font-size: 30px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  font-family: 'Anonymous Pro', monospace;
+  max-width: 20%; /* начальная ширина 0 */
+   color: white; 
+}
+
+.typewriter-animation {
+  animation:
+    typewriter 2s steps(16) 2s 1 normal both,
+    blinkingCursor 700ms steps(100) infinite normal,
+    hideCursor 0s forwards 3.8s;
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 16ch; }
+}
+
+@keyframes blinkingCursor {
+  from { border-right-color: rgba(255, 255, 255, 0.726); }
+  to { border-right-color: transparent; }
+}
+
+@keyframes hideCursor {
+    to {
+      border-right: none;
+    }
+  }
+  

@@ -1,0 +1,94 @@
+/* src/components/NavigationMenu.css */
+
+.nav-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.menu-button {
+  background-color: #0000006f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(7px);
+}
+
+.nav-dropdown {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #00000059;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7px);
+}
+
+
+
+.nav-item {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(-5px);
+  animation-fill-mode: forwards;
+}
+
+.fade-in {
+  animation: fadeInUp 0.3s forwards;
+}
+
+.fade-out {
+  animation: fadeOutUp 0.3s forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+
+
+.nav-item:hover {
+  background-color: #9b9b9b24;
+  border-radius: 8px;
+}
+
+.nav-dropdown button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.nav-dropdown button:hover {
+  background-color: #c6c6c680;
+  border-radius: 8px;
+}

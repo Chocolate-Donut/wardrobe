@@ -1,0 +1,90 @@
+/* LookUploadModal.css */
+
+.look-upload-modal .ant-modal-content {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.modal-content {
+  padding: 2rem;
+  background: rgba(46, 46, 46, 0.51);
+  backdrop-filter: blur(7px);
+  border-radius: 50px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.215);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.upload-btn {
+  color: #fff;
+  width: 100%;
+  border-radius: 100px;
+  background: #ffffff78;
+  border:none
+}
+
+.image-preview {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.dark-input {
+  background: #ffffffd4 !important;
+  color: #0f0f0f !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 30px;
+}
+
+.dark-select .ant-select-selector {
+  background-color: #ffffffd4 !important;
+  color: #111111 !important;
+  border-color: #ffffff !important;
+  border-radius: 30px;
+}
+
+.private-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cancel-btn {
+  color: #ccc !important;
+  border-color: #666 !important;
+}
+
+
+
+
+.color-palette {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.color-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+

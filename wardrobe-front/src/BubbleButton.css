@@ -1,0 +1,77 @@
+.button {
+    background: rgba(255, 255, 255, 0.33);
+    color: white;
+    background-blend-mode:'soft-light';
+    padding: 4px 15px;
+    font-size: 1rem;
+    border: none;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+    border-radius: 6px;
+    font-weight: normal;
+  }
+  
+  .button:hover {
+    background: #c48d8da0;
+  }
+  
+  .button:active {
+    transform: scale(0.95);
+  }
+  
+  .button--bubble__container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .button--bubble__effect-container {
+    position: absolute;
+    display: block;
+    width: 200%;
+    height: 400%;
+    top: -150%;
+    left: -50%;
+    filter: url("#goo");
+    pointer-events: none;
+  }
+  
+  .effect-button {
+    position: absolute;
+    width: 50%;
+    height: 25%;
+    top: 50%;
+    left: 25%;
+    background: rgba(255, 255, 255, 0.537);
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+  .circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #c48d8d;
+    transition: background 0.1s ease-out;
+  }
+  
+  .circle.top-left {
+    top: 40%;
+    left: 27%;
+  }
+  
+  .circle.bottom-right {
+    bottom: 40%;
+    right: 27%;
+  }
+  
+  .goo {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+  }
+  

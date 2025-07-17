@@ -1,0 +1,47 @@
+/* CreateLookPage.css */
+
+
+
+.option-block {
+  width: 280px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.option-block:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.option-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option-icon-img {
+  width: 64px;
+  height: 64px;
+}
+
+.option-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.option-desc {
+  font-size: 0.9rem;
+  color: white;
+  opacity: 0.85;
+}

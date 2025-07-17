@@ -1,0 +1,79 @@
+import React, { useEffect, useRef } from "react";
+import "./BubbleButton.css";
+import gsap from "gsap";
+
+interface BubbleButtonProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+}
+
+const BubbleButton: React.FC<BubbleButtonProps> = ({ children, onClick }) => {
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!buttonRef.current) return;
+
+    const $button = buttonRef.current;
+    const $circlesTopLeft = $button.parentElement?.querySelectorAll('.circle.top-left');
+    const $circlesBottomRight = $button.parentElement?.querySelectorAll('.circle.bottom-right');
+    const $effectButton = $button.parentElement?.querySelector('.effect-button');
+
+    if (!$circlesTopLeft || !$circlesBottomRight || !$effectButton) return;
+
+    const tlTop = gsap.timeline();
+    const tlBottom = gsap.timeline();
+    const btTl = gsap.timeline({ paused: true });
+
+    tlTop.to($circlesTopLeft, {
+      x: -25, y: -25, scaleY: 2, duration: 1.2, ease: "slow(0.1, 0.7, false)"
+    })
+    .to($circlesTopLeft[0], { scale: 0.2, x: "+=6", y: "-=2", duration: 0.1 })
+    .to($circlesTopLeft[1], { scaleX: 1, scaleY: 0.8, x: "-=10", y: "-=7", duration: 0.1 }, "-=0.1")
+    .to($circlesTopLeft[2], { scale: 0.2, x: "-=15", y: "+=6", duration: 0.1 }, "-=0.1")
+    .to($circlesTopLeft, { scale: 0, opacity: 0, duration: 1 }, "-=0.1");
+
+    tlBottom.to($circlesBottomRight, {
+      x: 30, y: 30, duration: 1.1, ease: "slow(0.1, 0.7, false)"
+    })
+    .to($circlesBottomRight[0], { scale: 0.2, x: "-=6", y: "+=3", duration: 0.1 })
+    .to($circlesBottomRight[1], { scale: 0.8, x: "+=7", y: "+=3", duration: 0.1 }, "-=0.1")
+    .to($circlesBottomRight[2], { scale: 0.2, x: "+=15", y: "-=6", duration: 0.1 }, "-=0.2")
+    .to($circlesBottomRight, { scale: 0, opacity: 0, duration: 1 }, "-=0.1");
+
+    btTl.add(tlTop)
+      .to($effectButton, { scaleY: 1.1, duration: 0.8 }, 0.1)
+      .add(tlBottom, 0.2)
+      .to($effectButton, { scale: 1, ease: "elastic.out(1.2, 0.4)", duration: 1.8 }, 1.2);
+
+    btTl.timeScale(2.6);
+
+    $button.addEventListener("mouseenter", () => {
+      btTl.restart();
+    });
+
+    return () => {
+      $button.removeEventListener("mouseenter", () => btTl.restart());
+    };
+  }, []);
+
+  return (
+    <span className="button--bubble__container">
+      <button className="button button--bubble" ref={buttonRef} onClick={onClick}>
+        {children}
+      </button>
+      <span className="button--bubble__effect-container">
+        <span className="circle top-left"></span>
+        <span className="circle top-left"></span>
+        <span className="circle top-left"></span>
+
+        <span className="button effect-button"></span>
+
+        <span className="circle bottom-right"></span>
+        <span className="circle bottom-right"></span>
+        <span className="circle bottom-right"></span>
+      </span>
+    </span>
+  );
+};
+
+export default BubbleButton;

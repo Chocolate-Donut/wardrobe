@@ -1,0 +1,29 @@
+.favorites-container {
+  background: linear-gradient(135deg, #6f4f335d, #cbbaac79);
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  overflow: visible;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+
+.card-container {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: center center; /* ✅ тень и масштаб из центра */
+  border-radius: 20px;
+}
+
+.card-container:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.162); /* тень посильнее */
+  z-index: 10; /* ✅ чтобы не пряталась под соседями */
+}
+

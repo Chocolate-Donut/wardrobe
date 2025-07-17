@@ -1,0 +1,240 @@
+.filter-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.282); /* Прозрачный фон или сделай белым, если нужно */
+  backdrop-filter: blur(7px); /* Красиво размоет фон под фильтрами */
+  padding: 8px 20px; 
+  display: flex;
+  /* justify-content: center; */
+  /* width: 100vw; */
+  gap: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  /* height: 60px; */ /* ← фиксируем высоту */
+    height: 60px;     
+    flex-wrap: nowrap; /* 👈 важно: запрещаем перенос */
+    /* justify-content: space-between;  */
+   justify-content: flex-start;
+
+    overflow: visible; 
+    width: 100%;
+}
+
+/* .filter-button {
+  flex: 1 1 0;
+  min-width: 0;
+  
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0; 
+
+  padding: 10px 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+} */
+
+.filter-button,
+.reset-button {
+  padding: 10px 30px; /* чуть меньше, чем 30px — безболезненно */
+  font-size: 1rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+
+
+.filter-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+
+.season-options-container,
+.trend-options-container {
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: -20px;
+  margin-top: 0.5rem; /* было 1rem - чуть компактнее */
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+
+.season-options-container.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Для каждой кнопки внутри */
+.season-options-container button {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Когда show активен – каждая кнопка появляется с задержкой */
+.season-options-container.show button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Лесенка – задержки по кнопкам */
+.season-options-container.show button:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.season-options-container.show button:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.season-options-container.show button:nth-child(3) {
+  transition-delay: 0.25s;
+}
+.season-options-container.show button:nth-child(4) {
+  transition-delay: 0.35s;
+}
+
+
+.trend-options-container.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Для каждой кнопки внутри */
+.trend-options-container button {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Когда show активен – каждая кнопка появляется с задержкой */
+.trend-options-container.show button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.trend-options-container.show button:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.trend-options-container.show button:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.trend-options-container.show button:nth-child(3) {
+  transition-delay: 0.25s;
+}
+.trend-options-container.show button:nth-child(4) {
+  transition-delay: 0.35s;
+}
+
+/* .reset-button{
+  padding: 10px 28px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  white-space: nowrap;
+  flex-shrink: 0;
+} */
+
+.reset-button:hover{
+    background: rgba(255, 255, 255, 0.5);
+ 
+}
+
+
+
+
+@media (max-width: 480px) {
+  .filter-bar {
+    gap: 3px;
+    padding: 6px 10px;
+  }
+
+  .filter-button,
+  .reset-button {
+    padding: 12px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.search-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.color-picker-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.color-picker {
+  width: 32px;
+  height: 32px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.selected-color-preview {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.clear-color-btn {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}

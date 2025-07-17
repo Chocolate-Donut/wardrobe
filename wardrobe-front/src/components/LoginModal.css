@@ -1,0 +1,140 @@
+.login-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.458);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .login-container {
+    background-color: rgba(38, 38, 38, 0.343);
+    backdrop-filter: blur(7px);
+    border-radius: 20px;
+    padding-bottom: 30px; 
+    width: 350px;
+    color: white;
+    text-align: center;
+    overflow: hidden; /* 👈 важно! чтобы обрезать всё лишнее */
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cat {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: 20px; 
+  }
+  
+
+  label {
+    display: block;
+    text-align: left; /* 👈 выравнивание по левому краю */
+    margin-left: 40px; /* 👈 отступ слева, чтобы не прилипал к краю */
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+  
+
+
+  .input-field {
+    width: calc(100% - 40px);
+    background-color: #888;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5px 20px 15px 20px;
+    font-size: 16px;
+    color: white;
+   
+  }
+  
+  .password-wrapper {
+    position: relative;
+  }
+  
+  .eye-icon {
+    position: absolute;
+    right: 33px;
+    top: 14px;
+    cursor: pointer;
+  }
+  
+  .button-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .back-button,
+  .login-button {
+    background-color: #c48d8d;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 15px; 
+  }
+  
+  .create-link {
+    font-size: 12px;
+    color: #aabaff;
+    text-decoration: underline;
+    
+  }
+  
+
+
+
+  .cat-mouth-wrapper {
+/*     position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px; */
+    position: relative;
+    bottom: -30px; /* отступ снизу формы, настрой под себя */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    z-index: 10;
+    
+
+  }
+  
+  .cat-mouth {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+  }
+  
+  .cat-mouth.closed {
+    opacity: 1;
+  }
+  
+  .cat-mouth.open {
+    opacity: 0;
+  }
+
+  .cat-mouth.hidden {
+    opacity: 0;
+  }
+  
+  .cat-mouth.visible {
+    opacity: 1;
+  }
+  
+  

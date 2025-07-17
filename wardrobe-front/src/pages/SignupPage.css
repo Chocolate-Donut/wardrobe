@@ -1,0 +1,75 @@
+.main{
+    
+    background-color: rgb(46, 46, 45);
+}
+.signup-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 2rem;
+    background: rgba(77, 77, 77, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0 1rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .eye-icon {
+    position: absolute;
+    right: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .signup-button {
+    width: 100%;
+    padding: 0.7rem;
+    background: #ff6ea1;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .signup-button:hover {
+    background: #8f63ec;
+  }
+  
+
+  .cat-header {
+    text-align: center;
+    margin-bottom: 0rem;
+    position: relative;
+    height: 15px;
+  }
+  
+  .upside-down-cat {
+
+    width: 70px;
+    transform: rotate(180deg); /* Перевёрнутый котик */
+    position: absolute;
+    left: 90%;
+    transform: translateX(-50%) translateY(-36%) rotate(180deg); /* центрируем + переворачиваем */
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .visible {
+    display: block;
+  }
+  

@@ -1,0 +1,590 @@
+/* CalendarPage.css */
+.calendar-container {
+
+  padding: 0px;
+  font-family: sans-serif;
+  background:#262626 ;
+  min-height: 100vh;
+  border-radius: 10px;
+}
+
+/* Добавьте в CalendarPage.css */
+.calendar-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.calendar-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.1"/></svg>');
+  pointer-events: none;
+  mix-blend-mode:soft-light;
+  z-index: 2;
+}
+
+.date-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.weather-info {
+  margin: 20px auto;
+  width: fit-content;
+  max-width: 300px; 
+  padding: 12px 20px;
+  border-radius: 40px;
+  background: linear-gradient(to right, rgba(36, 36, 36, 0.261), rgba(255, 255, 255, 0.177));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  line-height: 1.2;
+}
+.weather-info p {
+  margin: 2px 0; /* 👈 минимальный вертикальный отступ между <p> */
+}
+
+
+
+.events {
+  margin-top: 20px;
+}
+
+.event-item {
+  background: white;
+  padding: 6px 10px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.outfits img {
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+.note-section {
+  margin-top: 15px;
+  position: relative;
+}
+
+.note-section textarea {
+  width: 100%;
+  height: 50px;
+  padding: 12px;
+  border-radius: 30px;
+  border: 0px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.186);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  font-size: 16px;
+  resize: vertical;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.23);
+  outline: none;
+}
+
+
+.note-section button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+
+
+.outfit-grid {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.outfit-img {
+  width: 80px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.empty-hanger {
+  width: 80px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.186);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.32);
+}
+
+.add-outfit-btn {
+    display: block;
+   margin: 20px auto 0;
+  padding: 8px 20px;
+  
+  background-color: #ff47b2;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  width: fit-content; 
+}
+@media (max-width: 600px) {
+  .add-outfit-btn {
+    margin: 50px auto 0;        
+
+  }}
+
+.outfit-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.outfit-img {
+  width: 90px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.delete-btn {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ff4d4f;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  width: 24px;
+  height: 24px;
+  line-height: 0;
+  padding: 0;
+}
+
+.events textarea {
+  width: 100%;
+  height: 50px;
+  padding: 12px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  font-size: 16px;
+  resize: vertical;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+
+
+.date-strip {
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.keen-slider__slide.date-item {
+  min-width: 60px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.keen-slider__slide.date-item.selected {
+  background-color: #FFA07A; /* оранжевый круг */
+  color: white;
+  font-weight: bold;
+}
+
+.keen-slider__slide.date-item .dot {
+  width: 6px;
+  height: 6px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+}
+
+
+
+.week-slide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+  
+}
+
+.keen-slider__slide.date-item {
+  min-width: 40px;
+  margin: 0 5px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.date-strip-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+
+@media (max-width: 600px) {
+  .week-slide {
+    padding: 0 2px;         /* Меньше отступов слева и справа */
+    gap: 2px;               /* Меньше расстояние между числами */
+  }
+
+  .keen-slider__slide.date-item {
+    min-width: 28px;        /* Меньше сами кружки */
+    margin: 0 1px;
+    font-size: 12px;        /* Меньше цифры, если нужно */
+  }
+
+  .date-strip-wrapper {
+    margin-top: 20px;       /* Опционально уменьшить отступ сверху */
+  }
+}
+
+
+
+
+.active-date-circle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #ff45d1b4;
+  border-radius: 50%;
+  z-index: 0;
+  transition: left 0.3s ease;
+  pointer-events: none;
+}
+.current-date-top {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+  text-transform: capitalize;
+}
+
+.active-date-circle {
+  /* остальные стили */
+  opacity: 0; /* сначала невидим */
+  transition: left 0.3s ease, opacity 0.2s ease;
+}
+
+.active-date-circle.visible {
+  opacity: 1;
+}
+
+.date-strip {
+  overflow: visible !important; /* Важно для корректного отображения */
+}
+
+.keen-slider__slide {
+  min-width: 100%;
+}
+
+.date-header-wrapper {
+  position: relative;
+  padding-top: 10px;
+}
+
+.calendar-toggle-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.date-strip-wrapper {
+  margin-top: 32px; /* чтобы лента не налезала на иконку */
+  position: relative;
+  overflow: hidden;
+}
+
+
+.top-curve {
+  position: relative;
+  width: 100%;
+  height: clamp(50px, 15vw, 150px);
+
+  overflow: hidden;
+  border-bottom-left-radius: 100% 200%;
+  border-bottom-right-radius: 100% 200%;
+  z-index: 0;
+}
+.curve-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+
+
+.content-over-curve {
+  position: relative;
+  z-index: 1;
+   margin-top: -120px;
+   padding: 40px;
+}
+.calendar-container {
+  background: transparent;
+}
+@media (max-width: 600px) {
+  .content-over-curve {
+    margin-top: -90px;   /* Было -120px, стало меньше */
+    padding: 35px;       /* Было 40px, уменьшаем на мобилках */
+  }
+}
+
+@media (max-width: 600px) {
+  .top-curve {
+    height: 150px; /* например, уменьшаем до 100px на телефонах */
+    border-bottom-left-radius: 100% 150%;
+    border-bottom-right-radius: 100% 150%;
+  }
+}
+
+
+
+.date-item .number {
+  font-size: 26px; /* 👉 здесь укажи нужный размер */
+  font-weight: bold;
+  color: white;
+}
+@media (max-width: 600px) {
+  .date-item .number {
+    font-size: 25px; /* Меньше для мобильных */
+  }
+}
+
+
+
+.month-view {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+}
+
+.day-cell {
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.day-cell.today {
+  background: #FFA07A;
+  color: white;
+  font-weight: bold;
+}
+
+
+
+.month-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.month-modal {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 24px;
+  padding: 24px;
+  width: 90%;
+  max-width: 500px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.weekday-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 10px;
+}
+
+.weekday {
+  font-weight: bold;
+  text-align: center;
+  color: rgba(255,255,255,0.8);
+}
+
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.day-cell {
+  padding: 10px;
+  text-align: center;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.day-cell.today {
+  background: #FFA07A;
+  color: white;
+  font-weight: bold;
+}
+
+.month-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.month-navigation button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.month-modal {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 24px;
+  padding: 24px;
+  width: 90%;
+  max-width: 500px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  margin-bottom: 30px; /* 🔹отступ снизу */
+}
+
+.month-modal {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.day-cell {
+  padding: 8px;
+  min-height: 40px;
+}
+
+.other-month {
+  opacity: 0.5;
+}
+
+/* Для ленты */
+.number-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  margin-top: -7px;
+
+   box-shadow: 0 0 6px 2px #ff0000;
+  animation: glow-pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 4px 1px #a10101;
+  }
+  50% {
+    box-shadow: 0 0 10px 4px #e11d1d;
+  }
+  100% {
+    box-shadow: 0 0 6px 1px #990202;
+  }
+}
+
+
+
+/* Для модального календаря */
+.dot-calendar {
+  width: 10px;
+  height: 10px;
+  background-color: #ff0044;
+  box-shadow: 0 0 4px 2px #ff0000;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
