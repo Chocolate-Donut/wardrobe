@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  nestjs:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src/uploads:/app/uploads
+    depends_on:
+      - python-service
+
+  python-service:
+    build: ./python-microservice
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src/uploads:/app/uploads
